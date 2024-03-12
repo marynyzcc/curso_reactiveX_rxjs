@@ -1,7 +1,7 @@
 import { fromEvent, range } from "rxjs";
-import { map } from "rxjs/operators";
+import { map, pluck } from "rxjs/operators";
 
-/****** Operador map *******/
+/********* Operador map **********/
 /* Mostrar los numeros del 1 al 5 */
 // range(1,5).subscribe( console.log );
 
@@ -14,10 +14,21 @@ import { map } from "rxjs/operators";
 // .subscribe( console.log );
 
 /* Mostrar el codigo de la tecla pulsada */
+// const keyup$ = fromEvent<KeyboardEvent>( document, 'keyup' );
+
+// const keyupCode$ = keyup$.pipe(
+//     map(event => event.code)
+// );
+
+// keyupCode$.subscribe( code => console.log('map', code));
+
+
+/********* Operador pluck **********/
 const keyup$ = fromEvent<KeyboardEvent>( document, 'keyup' );
 
-const keyupCode$ = keyup$.pipe(
-    map(event => event.code)
-)
+const keupPluck$ = keyup$.pipe(
+    // pluck('key')
+    pluck('target', 'baseURI') // la coma equivale a la notacion de punto
+);
 
-keyupCode$.subscribe( code => console.log('map', code));
+keupPluck$.subscribe( code => console.log('pluck', code));
