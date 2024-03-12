@@ -1,4 +1,5 @@
-import { fromEvent, map, tap } from "rxjs";
+import { fromEvent } from "rxjs";
+import { map, tap } from "rxjs/operators";
 
 /* Ejercicio ProgressBar - Crear un progress bar que avance cuando se mueva el scroll vertical de la vista*/
 const texto = document.createElement('div');
