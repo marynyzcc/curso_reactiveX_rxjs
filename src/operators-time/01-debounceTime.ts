@@ -1,5 +1,5 @@
 import { fromEvent } from "rxjs";
-import { debounceTime, distinct, distinctUntilChanged, map, pluck } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, pluck } from 'rxjs/operators';
 
 /*********************** debounceTime *****************************/
 
@@ -10,11 +10,7 @@ const click$ = fromEvent(document, 'click');
 // )
 // .subscribe(console.log);
 
-
-click$.pipe(
-    debounceTime(3000)
-);
-
+// Ejemplo 2
 const input = document.createElement('input');
 document.querySelector('body').append(input);
 
