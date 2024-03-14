@@ -1,16 +1,9 @@
-import { from, of } from "rxjs";
-import { distinctUntilChanged } from "rxjs/operators";
+import { from } from "rxjs";
+import { distinctUntilKeyChanged } from "rxjs/operators";
 
 
-/***************** Operador distinctUntilChanged ********************/
+/***************** Operador distinctUntilKeyChanged ********************/
 /* Este operador deja pasar los valores por el observable si la emisión anterior no es la misma */
-
-const numeros$ = of(1, '1', 1,  3, 3, 2, 2, 4, 4, 5, 3, 1, '1');
-
-numeros$.pipe(
-    distinctUntilChanged() // la comprobacion la realiza con ===
-).subscribe(console.log);
-
 
 interface Personaje {
     nombre: string;
@@ -28,6 +21,6 @@ const personajes: Personaje[] = [
 ];
 
 from(personajes).pipe(
-    distinctUntilChanged( (ant, act) => ant.nombre === act.nombre )
+    distinctUntilKeyChanged('nombre')
 )
 .subscribe(console.log);
