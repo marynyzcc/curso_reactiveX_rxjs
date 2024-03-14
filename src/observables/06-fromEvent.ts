@@ -1,5 +1,10 @@
 import { fromEvent } from "rxjs";
 
+/* fromEvent es un operador de creación en la biblioteca RxJS. 
+   Se utiliza para crear un Observable a partir de eventos del DOM, 
+   eventos de EventEmitter, o eventos de otros objetos similares.
+ */
+
 /* Eventos del DOM */
 const src1$ = fromEvent<MouseEvent>(document, 'click');
 const src2$ = fromEvent<KeyboardEvent>(document, 'keyup');

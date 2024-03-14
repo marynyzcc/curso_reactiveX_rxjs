@@ -3,7 +3,14 @@ import { distinctUntilChanged } from "rxjs/operators";
 
 
 /***************** Operador distinctUntilChanged ********************/
-/* Este operador deja pasar los valores por el observable si la emisión anterior no es la misma */
+/* es un operador que solo emite cuando el valor actual es 
+   diferente al último valor emitido.
+
+  A diferencia del operador distinct, que ignora todos los 
+  valores duplicados, distinctUntilChanged solo ignora los valores 
+  duplicados consecutivos.
+
+ */
 
 const numeros$ = of(1, '1', 1,  3, 3, 2, 2, 4, 4, 5, 3, 1, '1');
 

@@ -3,7 +3,14 @@ import { distinctUntilKeyChanged } from "rxjs/operators";
 
 
 /***************** Operador distinctUntilKeyChanged ********************/
-/* Este operador deja pasar los valores por el observable si la emisión anterior no es la misma */
+/* es un operador que solo emite cuando el valor de una propiedad 
+   específica ha cambiado.
+
+   Este operador es similar a distinctUntilChanged, pero opera en base a 
+   una clave proporcionada.
+   Es útil cuando se trabaja con flujos de objetos y solo se desea emitir cuando 
+   cambia el valor de una propiedad específica de esos objetos.
+ */
 
 interface Personaje {
     nombre: string;

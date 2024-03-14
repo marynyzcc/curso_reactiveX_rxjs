@@ -1,5 +1,15 @@
 import { Observable, Observer, Subject } from 'rxjs';
 
+/* Un Subject en RxJS es una especie de puente o proxy que actúa tanto 
+   como un observador como un observable. Debido a que es un observador, 
+   tiene métodos como next(), error(), y complete() directamente disponibles 
+   para emitir valores, errores, o la señal de completado.
+
+   Al mismo tiempo, un Subject también es un Observable, por lo que puedes suscribirte a 
+   él. A diferencia de los Observable, los Subject son multicasting, lo que significa 
+   que pueden tener múltiples observadores.
+ */
+
 const observer: Observer<any> = {
     next: value => console.log('next: ', value),
     error: error => console.warn('error: ', error),

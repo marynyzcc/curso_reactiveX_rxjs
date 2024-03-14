@@ -2,6 +2,10 @@ import { fromEvent } from "rxjs";
 import { map, takeWhile } from "rxjs/operators";
 
 /***************** Operador takeWhile ********************/
+/* es un operador que emite valores del Observable solo mientras una condición 
+   especificada es verdadera. Una vez que la condición se vuelve falsa, 
+   takeWhile se completa y deja de emitir valores.
+*/
 
 const click$ = fromEvent<MouseEvent>(document, 'click');
 

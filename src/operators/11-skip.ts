@@ -3,6 +3,13 @@ import { takeUntil, skip, tap } from "rxjs/operators";
 
 
 /***************** Operador skip ********************/
+/* es un operador que omite las primeras n emisiones de un 
+   Observable y luego emite los valores subsiguientes.
+
+   Es útil cuando quieres ignorar las primeras n emisiones 
+   de un Observable.
+ */
+
 /* Se quiere detener el counter$ si se pulsa el boton 2 veces */
 
 const boton = document.createElement('button');

@@ -1,5 +1,9 @@
 import { asyncScheduler } from "rxjs";
 
+/* asyncScheduler programa tareas que se ejecutan después de un período de tiempo dado. 
+   Es similar a usar setTimeout. Esto significa que puedes programar tareas para que 
+   se ejecuten de manera asíncrona.
+ */
 
 // setTimeout(() => {}, 3000);
 // setInterval(() => {}, 3000);

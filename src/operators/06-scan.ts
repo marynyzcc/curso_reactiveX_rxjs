@@ -2,8 +2,14 @@ import { from } from "rxjs";
 import { map, reduce, scan } from "rxjs/operators";
 
 /***************** Operador scan ********************/
-/* El scan es igual que el operador reduce, la unica diferencia 
-* es que el scan emite el valor acumulado en cada iteracion
+/* es un operador que aplica una función acumuladora a cada 
+   valor emitido por un Observable, y devuelve cada resultado intermedio. 
+   Es similar al operador reduce, pero en lugar de emitir solo el 
+   valor final, scan emite cada valor intermedio.
+
+   scan es útil cuando necesitas mantener un estado 
+   acumulativo a lo largo del tiempo, como en un contador o 
+   en una lista que se va acumulando.
 */
 
 const numbers = [1, 2, 3, 4, 5];

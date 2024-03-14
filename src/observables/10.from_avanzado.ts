@@ -2,7 +2,10 @@ import { of, from } from "rxjs";
 
 /**
  * of = toma argumentos y genera una secuncia
- * from = crea un observable en base a un erray, promise iterable, observable, ...
+ * from = from es un operador de creación que convierte varios otros tipos de 
+ *        entradas en un Observable. Puede tomar una variedad de entradas, 
+ *        como un array, una promesa, un iterable, un objeto similar a un 
+ *        observable, entre otros.
  */
 
 const observer = {
