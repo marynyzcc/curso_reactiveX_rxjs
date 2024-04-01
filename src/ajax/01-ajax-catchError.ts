@@ -9,7 +9,7 @@ import { catchError, pluck } from 'rxjs/operators';
  *  - Es una API que no es bloqueante, es decir, no detiene la ejecución del código mientras se realiza la petición.
  */
 
-const url = 'https://api.github.com/usersXXX?per_page=5';
+const url = 'https://api.github.com/usersXXX?per_page=5'; //'https://api.github.com/users?per_page=5';
 
 const manejaErrores = (response: Response) => {
     if (!response.ok) throw new Error(response.statusText);
