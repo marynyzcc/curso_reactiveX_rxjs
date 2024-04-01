@@ -1,5 +1,6 @@
 
 import { fromEvent, interval, map, mergeMap, of, take, takeUntil } from "rxjs";
+import { ajax } from "rxjs/ajax";
 
 /******************************************* MergeMap ****************************************/
 /**
@@ -36,3 +37,24 @@ mousedown$.pipe(
     ))
 )
 .subscribe(console.log);
+
+/***************************************************************************/
+
+// Otro ejemplo
+
+// Referencias
+const url = 'https://httpbin.org/delay/1?arg=';
+const body = document.querySelector('body');
+const textInput = document.createElement('input');
+
+body.append(textInput);
+
+// Streams
+const input$ = fromEvent<KeyboardEvent>(textInput, 'keyup');
+
+
+input$.pipe(
+    map<KeyboardEvent, string>( event => event.target['value'] ),
+    mergeMap( texto => ajax.getJSON( url + texto))
+)
+.subscribe( console.log );
